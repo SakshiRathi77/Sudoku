@@ -40,44 +40,6 @@ def MakeSudoku(level):
     return Gridi,Grid,Gridt,range_g
 
 
-def Solve_MakeSudoku(level):
-    if level==1:
-        range_g=9 
-        el=15
-    elif level==2:
-        range_g=6
-        el=10
-    elif level==3:
-        range_g=3
-        el=5
-        print("reached")
-    Grid=[[0 for i in range(range_g)] for j in range (range_g)]
-    print(Grid)
-    Gridi=[[0 for i in range(range_g)] for j in range (range_g)]
-    Gridt=[[False for i in range(range_g)] for j in range (range_g)]
-    
-    for i in range(range_g):
-        for j in range(range_g):
-            Grid[i][j]=0
-            Gridt[i][j]=False
-    print(Grid)
-
-    for i in   range(el):
-        row=i
-        col=random.randrange(range_g)
-        num= random.randrange(1,range_g+1)
-        while(not Checkvalid(range_g,Grid,row ,col,num)  or Grid[row][col]!=0):
-            row=i
-            col=random.randrange(range_g)
-            num= random.randrange(1,range_g)
-            # print(1)
-                
-        Grid[row][col]=num
-        Gridi[row][col]=num
-        Gridt[row][col]=True   
-        # print(Grid)
-    printgrid(Grid,range_g)
-    return Gridi,Grid,Gridt,range_g
 
 
 
